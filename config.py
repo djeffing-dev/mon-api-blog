@@ -9,12 +9,12 @@ class Config:
 class DevelopmentConfig(Config):
     """Configuration pour l'environnement de développement."""
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'postgresql://user:password@localhost:5432/db_name_dev'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 
 class ProductionConfig(Config):
     """Configuration pour l'environnement de production."""
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'postgresql://user:password@localhost:5432/db_name_prod'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or ''
 
 config = {
     'development': DevelopmentConfig,
