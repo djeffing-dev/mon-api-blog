@@ -1,0 +1,34 @@
+GET http://127.0.0.1:5000/api/tags
+Content-Type: application/application/json
+
+###
+### Test de l'endpoint POST
+POST http://127.0.0.1:5000/api/tags
+Content-Type: application/json
+
+{
+    "name":"Lecture"
+}
+
+
+###
+### Test de l'endpoint PUT
+PUT http://127.0.0.1:5000/api/tags/5
+Content-Type: application/json
+
+{
+    "name":"Education"
+}
+
+###
+### Test de l'endpoint (GET) find_by_id
+GET http://127.0.0.1:5000/api/tags/2
+Content-Type: application/json
+
+
+
+###
+### Test de l'endpoint DELETE
+DELETE  http://127.0.0.1:5000/api/tags/4
+Content-Type: application/json
+
