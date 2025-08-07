@@ -1,0 +1,31 @@
+GET http://127.0.0.1:5000/api/users
+Content-Type: application/json
+
+###
+
+### Test de l'endpoint POST
+# Méthode et URL
+POST http://127.0.0.1:5000/api/users
+Content-Type: application/json
+
+{
+    "email": "babien.net@gmail.com",
+    "username": "babien",
+    "password": "babien123"
+}
+
+###
+### Test de l'endpoint GET avec un ID spécifique
+GET http://127.0.0.1:5000/api/users/1
+Content-Type: application/json
+
+###
+### Test de l'endpoint PUT pour mettre à jour un utilisateur
+PUT http://127.0.0.1:5000/api/users/1
+Content-Type: application/json
+
+{"email": "drake.dov@gmail.com"}
+
+###
+### Test de l'endpoint DELETE pour supprimer un utilisateur
+DELETE http://127.0.0.1:5000/api/users/3

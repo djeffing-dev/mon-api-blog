@@ -20,7 +20,7 @@ class User(db.Model):
         self.email = email
         self.password = password
     
-    def to_dic(self):
+    def to_dict(self):
         """ Retoune un dictionnaire avec les informations essentielles de l'utilisateur """
         return {"id":self.id, "username":self.username, "email":self.email}
     

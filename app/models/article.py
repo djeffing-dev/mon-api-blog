@@ -6,7 +6,7 @@ class Article(db.Model):
     __tablename__ = "articles"  # Définition du nom de la table dans la base de données
 
     id = db.Column(db.Integer, primary_key=True)  # Identifiant unique
-    title = db.Column(db.String(20), nullable=False)
+    title = db.Column(db.String(255), nullable=False)
     description = db.Column(db.Text, nullable=False)
     user_id = db.Column( db.Integer, db.ForeignKey("users.id"), nullable=False)  # Correction ici ✅
     create_at = db.Column(db.DateTime, nullable=False, default=datetime.now)

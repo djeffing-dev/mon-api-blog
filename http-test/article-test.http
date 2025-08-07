@@ -1,0 +1,34 @@
+GET http://127.0.0.1:5000/api/articles
+Content-Type: application/json
+
+###
+### Test de la methode POST
+POST http://127.0.0.1:5000/api/articles
+Content-Type:  application/json
+
+{
+    "title" : "Une petite histoire de science",
+    "description" : "c'est juste une petite histoire",
+    "user_id": 1
+}
+
+
+###
+### Test de la methode PUT
+PUT http://127.0.0.1:5000/api/articles/1
+Content-Type:  application/json
+
+{
+    "title" : "Une petite histoire de science de albert"
+}
+
+###
+### Test de la methode POST "add tag to article "
+POST http://127.0.0.1:5000/api/articles/add_tag_to_article
+Content-Type:  application/json
+
+{
+    "article_id" : 1,
+    "tag_id":2
+}
+

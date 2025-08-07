@@ -1,7 +1,9 @@
 import os
-from flask import Flask
+from flask import Flask, Blueprint
 from .extensions import db
-from .api.routes import api_dp
+from .api.user_routes import user_dp
+from .api.tag_routes import tag_dp
+from .api.article_routes import article_dp
 from config import config
 from app.models import init_db
 
@@ -18,9 +20,14 @@ def create_app(config_name=None):
 
 
     #Enregistrez les bleueprints
-    app.register_blueprint(api_dp, url_prefix="/api")
+    api_dp = Blueprint('api', __name__, url_prefix="/api")
+    api_dp.register_blueprint(user_dp)
+    api_dp.register_blueprint(tag_dp)
+    api_dp.register_blueprint(article_dp)
 
-    # execute_function(app)
+    app.register_blueprint(api_dp)
+
+    #execute_function(app)
 
     return app
 
