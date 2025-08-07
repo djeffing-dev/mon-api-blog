@@ -6,7 +6,7 @@ tag_dp = Blueprint('tag_api',__name__, url_prefix="/tags")
 
 @tag_dp.route('', methods=['GET'])
 def get_tag():
-    tags = tag_serv.findAll()
+    tags = tag_serv.find_all()
     tag_dic = [tag.to_dict() for tag in tags]
     return jsonify({"tags":tag_dic}) ,200
 

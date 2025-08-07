@@ -14,7 +14,7 @@ def create(data:dict) -> Tag:
     return newTag
 
 
-def findAll():
+def find_all():
     return Tag.query.all()
 
 

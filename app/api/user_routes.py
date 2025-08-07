@@ -22,14 +22,14 @@ def create_user():
 
 @user_dp.route('',methods=['GET'])
 def get_users():
-    users = user_serv.findAll()
+    users = user_serv.find_all()
     users_dic = [user.to_dict() for user in users]
     return {"users":users_dic}
 
 
 @user_dp.route('/<int:user_id>',methods=['GET'])
 def find_user_by_id(user_id):
-    user = user_serv.findById(user_id)
+    user = user_serv.find_by_id(user_id)
     if not user:
         return jsonify({"error": "Utilisateur non trouvé"}), 404
     return jsonify(user.to_dict()), 200
@@ -49,7 +49,7 @@ def update_user(user_id):
 
 @user_dp.route('/<int:user_id>', methods=['DELETE'])
 def delete_user_by_id(user_id):
-    message = user_serv.deleteById(user_id)
+    message = user_serv.delete_by_Id(user_id)
     return jsonify({"message":message}),200
 
 

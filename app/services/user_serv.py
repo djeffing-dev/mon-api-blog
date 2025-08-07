@@ -15,11 +15,11 @@ def create(data:dict) -> User:
     db.session.commit()
     return newUser
 
-def findAll() -> list[User]:
+def find_all() -> list[User]:
     return User.query.all()
 
 def udpate(user_id, data : dict) -> User:
-    user = findById(user_id)
+    user = find_by_id(user_id)
     if not user:
         raise ValueError("L'utilisateur n'existe pas")
     
@@ -31,12 +31,12 @@ def udpate(user_id, data : dict) -> User:
    
 
 
-def findById(user_id) -> User:
+def find_by_id(user_id) -> User:
     return User.query.get(user_id)
 
 
 
-def deleteById(user_id):
+def delete_by_Id(user_id):
     User.query.filter_by(id=user_id).delete()
     db.session.commit()
     return "l'utilisateur a été supprimé avec succès"
